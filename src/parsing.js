@@ -1,14 +1,8 @@
-//import { cwd } from 'node:process';
-//import path from 'path';
-//import fs from 'fs';
 import yaml from 'js-yaml';
-import getData from './index.js';
 
-
-const getParsed = (file) => {
-  const data = getData(file);
+const getParsed = (file, data) => {
   if (String(file).endsWith('.json')) {
-    console.log(JSON.stringify(JSON.parse(data)));
+    return JSON.parse(data);
   } else if (String(file).endWith('.yaml')) {
     return yaml.load(data);
   }
