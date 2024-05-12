@@ -3,11 +3,11 @@ import path from 'path';
 import fs from 'fs';
 
 //const dir = cwd(file);
+const getFilePath = (file) => path.resolve(process.cwd(), file);
 
 const getData = (file) => {
-  const dir = path.dirname(file);
-  const filepath = path.resolve(dir, file);
-  const data = fs.readFileSync(filepath);
+  const filepath = getFilePath(file);
+  const data = fs.readFileSync(filepath, 'utf8');
   return data;
 };
 
