@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander';
-
+import genDiff from '../index.js';
 
 const program = new Command();
-import genDiff from '../src/index.js'
+
 program
   .version('12.0.0')
   .description('Compares two configuration files and shows a difference.')
