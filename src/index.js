@@ -19,8 +19,8 @@ const genDiff = (filepath1, filepath2) => {
   const parsing2 = getParsed(data2, format2);
   const compare = getComparedFiles(parsing1, parsing2);
   console.log(compare);
-  //console.log(parsing1);
-  //console.log(parsing2);
+  //console.log(typeof parsing1);
+  //console.log(typeof parsing2);
 };
 
 export default genDiff; 

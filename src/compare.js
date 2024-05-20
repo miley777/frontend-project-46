@@ -1,28 +1,27 @@
 import _ from 'lodash';
 
-const getSortedKeys = (filepath) => {
-  const getDataKeys = _.keys(filepath);
-  const getKeysSorted = _.sortBy(getDataKeys);
-  return getKeysSorted;
-}
- const arr = {};
-const getFunk = (getDataKeys1, getDataKeys2, filepath1, filepath2) => {
-  if ((getDataKeys1 === getDataKeys2) && (filepath1.getDataKeys1 === filepath2.getDataKeys2)) {
-    arr['  ' + getDataKeys1] = filepath1.getDataKeys1;
-  } else if ((getDataKeys1 === getDataKeys2) && (filepath1.getDataKeys1 !== filepath2.getDataKeys2)) {
-    arr['- ' + getDataKeys1] = filepath1.getDataKeys1;
-    arr['+ ' + getDataKeys2] = filepath1.getDataKeys2;
-  } else if ((getDataKeys1 !== getDataKeys2)) {
-    arr['- ' + getDataKeys1] = filepath1.getDataKeys1;
-  } else if /// как отразить что ориентировать нужно не только на первый , но и на второй массив и как отразить что все должно быть по алфавиту 
-}
 
 const getComparedFiles = (filepath1, filepath2) => {
-  const sortedKeys1 = getSortedKeys(filepath1);
-  const sortedKeys2 = getSortedKeys(filepath2);
-  // как то повторить функцию, чтобы все не осталось не обработанного элемента с обеих сторон
-  const result = getFunk(sortedKeys1, sortedKeys2);
-  console.log(result);
+  const keys1 = _.keys(filepath1);
+  const keys2 = _.keys(filepath2);
+  const uniqKeys = _.uniq([ ...keys1, ...keys2 ]);
+  const sortedKeys = _.sortBy(uniqKeys);
+
+  const arr = {};
+  for (const [, value1] of filepath1) {
+    if (filepath1[sortedKey] === value1) {
+      for (const [, value2] of filepath2) {
+        if (filepath2[sortedKey] === value2) {
+          arr['  ' + sortedKeys] = filepath1[sortedKeys];
+        } else {
+          arr['+ ' + sortedKeys] = filepath1.sortedKeys;
+        }
+      }
+      arr['- ' + sortedKeys] = filepath1.sortedKeys;
+    }
+  }
+
+  return arr;
 };
 
 export default getComparedFiles;
