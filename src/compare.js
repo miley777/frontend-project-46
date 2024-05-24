@@ -6,22 +6,33 @@ const getComparedFiles = (filepath1, filepath2) => {
   const keys2 = _.keys(filepath2);
   const uniqKeys = _.uniq([ ...keys1, ...keys2 ]);
   const sortedKeys = _.sortBy(uniqKeys);
-
-  const arr = {};
-  for (const [, value1] of filepath1) {
-    if (filepath1[sortedKey] === value1) {
-      for (const [, value2] of filepath2) {
-        if (filepath2[sortedKey] === value2) {
-          arr['  ' + sortedKeys] = filepath1[sortedKeys];
-        } else {
-          arr['+ ' + sortedKeys] = filepath1.sortedKeys;
-        }
-      }
-      arr['- ' + sortedKeys] = filepath1.sortedKeys;
+  const result = {};
+  
+  const mapKey = sortedKeys.map((key) => {
+    if (!Object.hasOwn(filepath1, key)) {
+      return `+  ${key}: ${filepath2[key]}`;
+    } else if (!Object.hasOwn(filepath2, key)) {
+      return `-  ${key}: ${filepath1[key]}`;
+    } else if (filepath1[key] !== filepath2[key]) {
+      return `-  ${key}: ${filepath1[key]}\n  + ${key}: ${filepath2[key]}`;
+    } else if (filepath1[key] === filepath2[key]) {
+      return `   ${key}: ${filepath2[key]}`;
     }
-  }
+  });
 
-  return arr;
+  //for (const key of sortedKeys) {
+    //if (!Object.hasOwn(filepath1, key)) {
+      //result[key] = 'added';
+    //} else if (!Object.hasOwn(filepath2, key)) {
+      //result[key] = 'deleted';
+    //} else if (filepath1[key] !== filepath2[key]) {
+      //result[key] = 'changed';
+    //} else if (filepath1[key] === filepath2[key]) {
+      //result[key] = 'unchanged';
+    //}
+  //};
+
+  return mapKey;
 };
 
 export default getComparedFiles;
