@@ -5,5 +5,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: NODE_OPTIONS=--experimental-vm-modules npx jest
+      - run: npx -n --experimental-vm-modules jest
       - run: make lint
