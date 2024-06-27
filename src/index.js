@@ -6,9 +6,9 @@ import fs from 'fs';
 import getParsed from './parsing.js';
 import getComparedFiles from './compare.js';
 
-const getFilePath = (filepath) => filepath.includes('/') ? path.resolve(process.cwd(), filepath) : path.resolve(path.join('/', process.cwd(), '.',  filepath));
+const buildFilePath = (filepath) => path.resolve(process.cwd(), filepath);
 
-export const getData = (filepath) => fs.readFileSync(getFilePath(filepath), 'utf-8');
+export const getData = (filepath) => fs.readFileSync(buildFilePath(filepath), 'utf-8');
 
 //const __filename = (filepath) => fileURLToPath(filepath);
 
@@ -22,7 +22,7 @@ export const getData = (filepath) => fs.readFileSync(getFilePath(filepath), 'utf
 const extractFormat = (filepath) => path.extname(filepath).slice(1);
 
 const genDiff = (filepath1, filepath2) => {
-  console.log(getFilePath(filepath1));
+  console.log(buildFilePath(filepath1));
   //const __filename1 = fileURLToPath(filepath1);
   const data1 = getData(filepath1);
   const data2 = getData(filepath2);
