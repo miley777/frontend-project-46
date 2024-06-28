@@ -11,7 +11,7 @@ test.each([ {file1: './__tests__/../__fixtures__/file1.json', file2: './__tests_
   {file1: './__fixtures__/file1.json', file2: './__fixtures__/file2.json'},
   {file1: './bin/../__fixtures__/file1.json', file2: './bin/../__fixtures__/file2.json'},
   {file1: './src/../__fixtures__/file1.json', file2: './src/../__fixtures__/file2.json'},
-]) ('gendiff', () => {
+]) ('gendiff', ({file1, file2}) => {
   expect(genDiff(file1, file2)).toEqual(readFile(__fixtures__/confirmingFile1.txt));
 });
 
