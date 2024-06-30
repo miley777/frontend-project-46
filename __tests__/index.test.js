@@ -3,7 +3,7 @@
 import fs from 'fs';
 import getFixturePath from './helper';
 import   genDiff  from '../src';
-import { expect, test} from '@jest/globals';
+import { expect, test } from '@jest/globals';
 
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
