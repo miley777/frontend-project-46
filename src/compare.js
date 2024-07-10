@@ -31,11 +31,10 @@ const getComparedFiles = (filepath1, filepath2) => {
 
 };
 
-const iter = (allEntries, spaceCount = 2, depth = 1, replacer = null) => {
-  
+const iter = (allEntries, spaceCount = 2, depth = 1, replacer = ' ') => {
+  const indentSize = depth * spaceCount;
+  const repeatedReplacer = replacer.repeat(indentSize);
   const sortedEntries = allEntries.map(([key, val]) => {
-    const indentSize = depth * spaceCount;
-    const repeatedReplacer = replacer.repeat(indentSize);
     if (!_.isObject(val)) {
       return `${repeatedReplacer}${key}: ${val}`;
     } else {
