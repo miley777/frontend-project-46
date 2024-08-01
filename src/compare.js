@@ -1,38 +1,51 @@
-//import _ from 'lodash';
 import { getType } from './diff.js';
-
+import _ from 'lodash';
 
 
 const iter = (typedKeys, spaceCount = 4, depth = 1, replacer = ' ') => {
   const indentSize = depth * spaceCount;
   const shiftToTheLeft = spaceCount - 2;
+  const currentIndentWithoutSpasialSymbols = replacer.repeat(indentSize);
   const currentIndent = replacer.repeat(indentSize - shiftToTheLeft);
   const bracketIndent = replacer.repeat(indentSize - spaceCount);
   const sortedEntries = typedKeys.map((typedKey) => {
+    
+  const objToVal = (val, currentIndentWithoutSpasialSymbols, bracketIndent) => {
+    const lines = _.isObject(val) ? Object.entries(val).map(([key, value]) => [ '{', `${currentIndentWithoutSpasialSymbols}${key}: ${value}`, `${bracketIndent}}`,].join('\n')) : val;
+    return lines;
+  }
     if (typedKey.type === 'deleted') {
-      return `${currentIndent}- ${typedKey.key}: ${typedKey.value}`;
+      return `${currentIndent}- ${typedKey.key}: ${objToVal(typedKey.value, currentIndentWithoutSpasialSymbols, bracketIndent)}`;
     }
     if (typedKey.type === 'added') {
-      return `${currentIndent}+ ${typedKey.key}: ${typedKey.value}`;
+      //console.log(typedKey.value);
+      return `${currentIndent}+ ${typedKey.key}: ${objToVal(typedKey.value, currentIndentWithoutSpasialSymbols, bracketIndent)}`;
     }
     if (typedKey.type === 'unchanged') {
       return `${currentIndent}  ${typedKey.key}: ${typedKey.value}`;
     }
     if (typedKey.type === 'changed') {
-      return `${currentIndent}- ${typedKey.key}: ${typedKey.value1}\n${currentIndent}+ ${typedKey.key}: ${typedKey.value2}`;
+      //console.log(typedKey.key);
+      return `${currentIndent}- ${typedKey.key}: ${objToVal(typedKey.value1, currentIndentWithoutSpasialSymbols, bracketIndent)}\n${currentIndent}+ ${typedKey.key}: ${objToVal(typedKey.value2, currentIndentWithoutSpasialSymbols, bracketIndent)}`;
     }
     if (typedKey.type === 'nested') {
+      //console.log(typedKey.key);
       return `${currentIndent}  ${typedKey.key}: ${iter(typedKey.children, spaceCount, depth + 1, replacer)}`;
     }
+    //if (_.isObject(typedKey.value)) {
+      //return objToVal(typedKey.value, currentIndentWithoutSpasialSymbols, bracketIndent);
+    //}
   });
   return [ '{', ...sortedEntries, `${bracketIndent}}`,].join('\n');
 }
+
 
 
 const getComparedLines = (filepath1, filepath2) => {
   const typedKeys = getType(filepath1, filepath2);
   const iterdiff = iter(typedKeys);
   return iterdiff;
+  //return typedKeys;
 };
 
 export default getComparedLines;
