@@ -19,9 +19,57 @@ test.each([ {file1: './__tests__/../__fixtures__/file1.json', file2: './__tests_
   {file1: './__fixtures__/file1.yml', file2: './__fixtures__/file2.yml'},
   {file1: './bin/../__fixtures__/file1.yml', file2: './bin/../__fixtures__/file2.yml'},
   {file1: './src/../__fixtures__/file1.yml', file2: './src/../__fixtures__/file2.yml'},
-]) ('testRightPaths', ({file1, file2}) => {
-  expect(genDiff(file1, file2)).toEqual(readFile('confirmingFile1.txt'));
+]) ('testRightPaths stylish1', ({file1, file2}) => {
+  expect(genDiff(file1, file2)).toEqual(readFile('confirmingFileStylish.txt'));
+});
 
+test.each([ {file1: './__tests__/../__fixtures__/file1.json', file2: './__tests__/../__fixtures__/file2.json', formatName: 'stylish'},
+  {file1: './__fixtures__/file1.json', file2: './__fixtures__/file2.json', formatName: 'stylish'},
+  {file1: './bin/../__fixtures__/file1.json', file2: './bin/../__fixtures__/file2.json', formatName: 'stylish'},
+  {file1: './src/../__fixtures__/file1.json', file2: './src/../__fixtures__/file2.json', formatName: 'stylish'},
+  {file1: './__tests__/../__fixtures__/file1.yaml', file2: './__tests__/../__fixtures__/file2.yaml', formatName: 'stylish'},
+  {file1: './__fixtures__/file1.yaml', file2: './__fixtures__/file2.yaml', formatName: 'stylish'},
+  {file1: './bin/../__fixtures__/file1.yaml', file2: './bin/../__fixtures__/file2.yaml', formatName: 'stylish'},
+  {file1: './src/../__fixtures__/file1.yaml', file2: './src/../__fixtures__/file2.yaml', formatName: 'stylish'},
+  {file1: './__tests__/../__fixtures__/file1.yml', file2: './__tests__/../__fixtures__/file2.yml', formatName: 'stylish'},
+  {file1: './__fixtures__/file1.yml', file2: './__fixtures__/file2.yml', formatName: 'stylish'},
+  {file1: './bin/../__fixtures__/file1.yml', file2: './bin/../__fixtures__/file2.yml', formatName: 'stylish'},
+  {file1: './src/../__fixtures__/file1.yml', file2: './src/../__fixtures__/file2.yml', formatName: 'stylish'},
+]) ('testRightPaths stylish2', ({file1, file2, formatName}) => {
+  expect(genDiff(file1, file2, formatName)).toEqual(readFile('confirmingFileStylish.txt'));
+});
+
+test.each([ {file1: './__tests__/../__fixtures__/file1.json', file2: './__tests__/../__fixtures__/file2.json', formatName: 'plain'},
+  {file1: './__fixtures__/file1.json', file2: './__fixtures__/file2.json', formatName: 'plain'},
+  {file1: './bin/../__fixtures__/file1.json', file2: './bin/../__fixtures__/file2.json', formatName: 'plain'},
+  {file1: './src/../__fixtures__/file1.json', file2: './src/../__fixtures__/file2.json', formatName: 'plain'},
+  {file1: './__tests__/../__fixtures__/file1.yaml', file2: './__tests__/../__fixtures__/file2.yaml', formatName: 'plain'},
+  {file1: './__fixtures__/file1.yaml', file2: './__fixtures__/file2.yaml', formatName: 'plain'},
+  {file1: './bin/../__fixtures__/file1.yaml', file2: './bin/../__fixtures__/file2.yaml', formatName: 'plain'},
+  {file1: './src/../__fixtures__/file1.yaml', file2: './src/../__fixtures__/file2.yaml', formatName: 'plain'},
+  {file1: './__tests__/../__fixtures__/file1.yml', file2: './__tests__/../__fixtures__/file2.yml', formatName: 'plain'},
+  {file1: './__fixtures__/file1.yml', file2: './__fixtures__/file2.yml', formatName: 'plain'},
+  {file1: './bin/../__fixtures__/file1.yml', file2: './bin/../__fixtures__/file2.yml', formatName: 'plain'},
+  {file1: './src/../__fixtures__/file1.yml', file2: './src/../__fixtures__/file2.yml', formatName: 'plain'},
+]) ('testRightPaths plain', ({file1, file2, formatName}) => {
+  expect(genDiff(file1, file2, formatName)).toEqual(readFile('confirmingFilePlain.txt'));
+});
+
+test.each([ {file1: './__tests__/../__fixtures__/file1.json', file2: './__tests__/../__fixtures__/file2.json', formatName: 'json'},
+  {file1: './__fixtures__/file1.json', file2: './__fixtures__/file2.json', formatName: 'json'},
+  {file1: './bin/../__fixtures__/file1.json', file2: './bin/../__fixtures__/file2.json', formatName: 'json'},
+  {file1: './src/../__fixtures__/file1.json', file2: './src/../__fixtures__/file2.json', formatName: 'json'},
+  {file1: './__tests__/../__fixtures__/file1.yaml', file2: './__tests__/../__fixtures__/file2.yaml', formatName: 'json'},
+  {file1: './__fixtures__/file1.yaml', file2: './__fixtures__/file2.yaml', formatName: 'json'},
+  {file1: './bin/../__fixtures__/file1.yaml', file2: './bin/../__fixtures__/file2.yaml', formatName: 'json'},
+  {file1: './src/../__fixtures__/file1.yaml', file2: './src/../__fixtures__/file2.yaml', formatName: 'json'},
+  {file1: './__tests__/../__fixtures__/file1.yml', file2: './__tests__/../__fixtures__/file2.yml', formatName: 'json'},
+  {file1: './__fixtures__/file1.yml', file2: './__fixtures__/file2.yml', formatName: 'json'},
+  {file1: './bin/../__fixtures__/file1.yml', file2: './bin/../__fixtures__/file2.yml', formatName: 'json'},
+  {file1: './src/../__fixtures__/file1.yml', file2: './src/../__fixtures__/file2.yml', formatName: 'json'},
+]) ('testRightPaths plain', ({file1, file2, formatName}) => {
+  expect(genDiff(file1, file2, formatName)).toEqual(readFile('confirmingFileJSON.txt'));
+  
 });
 
 test.each([ {file1: null, file2: null},
