@@ -15,7 +15,7 @@
 
 ### App Description 
 
-#### GenDiff is a cli-app determines the difference between two data structures.
+ GenDiff is a cli-app determines the difference between two data structures.
 
 ### App capabilities:
 - Support for different input formats: *json*, *yaml*.
@@ -66,36 +66,35 @@ Options of format you can choose from:
 Stylysh is a default format, if you need output in this format you can skip `-f` or `--format`. You can see skip of this option in examples below.
 
 ## Exapmles
-
-### Comparison of two flat JSON-files (example with skipping `-f` or `--format`).
+Comparison of two flat JSON-files (example with skipping `-f` or `--format`).
 
 [![asciicast](https://asciinema.org/a/5nIgrvD83nQenFbpzTXZmKPR2.svg)](https://asciinema.org/a/5nIgrvD83nQenFbpzTXZmKPR2)
 
-### Comparison of two flat YAML-files (example with skipping `-f` or `--format`).
+Comparison of two flat YAML-files (example with skipping `-f` or `--format`).
 
 [![asciicast](https://asciinema.org/a/iQwADRzOs8ORayITE4my1rya9.svg)](https://asciinema.org/a/iQwADRzOs8ORayITE4my1rya9)
 
-### **STYLISH** Comparison of two nested JSON-files
+**STYLISH** Comparison of two nested JSON-files
 
 [![asciicast](https://asciinema.org/a/FojiDrWOAVzwQ651J9ZVGgHRd.svg)](https://asciinema.org/a/FojiDrWOAVzwQ651J9ZVGgHRd)
 
-### **STYLISH** Comparison of two nested YAML-files
+**STYLISH** Comparison of two nested YAML-files
 
 [![asciicast](https://asciinema.org/a/EoXNCS8RsYASbMxSiFae5leOz.svg)](https://asciinema.org/a/EoXNCS8RsYASbMxSiFae5leOz)
 
-### **PLAIN** Comparison of two nested JSON-files
+**PLAIN** Comparison of two nested JSON-files
 
 [![asciicast](https://asciinema.org/a/4QimxPBpNOtCxgglS1GvOp4Wb.svg)](https://asciinema.org/a/4QimxPBpNOtCxgglS1GvOp4Wb)
 
-### **PLAIN** Comparison of two nested YAML-files
+**PLAIN** Comparison of two nested YAML-files
 
 [![asciicast](https://asciinema.org/a/yDhtI6U37LJeoAqMhgG8boiFB.svg)](https://asciinema.org/a/yDhtI6U37LJeoAqMhgG8boiFB)
 
-### **JSON** Comparison of two nested JSON-files
+**JSON** Comparison of two nested JSON-files
 
 [![asciicast](https://asciinema.org/a/iG5nYwwsT8DRNcPddc5UTegjO.svg)](https://asciinema.org/a/iG5nYwwsT8DRNcPddc5UTegjO)
 
-### **JSON** Comparison of two nested YAML-files
+**JSON** Comparison of two nested YAML-files
 
 [![asciicast](https://asciinema.org/a/5qPX3djPeySOiiV5oEkJj7HLM.svg)](https://asciinema.org/a/5qPX3djPeySOiiV5oEkJj7HLM)
 
