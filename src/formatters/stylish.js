@@ -17,12 +17,12 @@ const stringify = (keys, spaceCount = 4, depth = 1) => {
   if (!_.isObject(keys)) {
     return `${keys}`;
   }
-  const objjj = Object.entries(keys).map(
+  const objEntries = Object.entries(keys).map(
     ([key, value]) =>
       `${currentIndentWithoutSpasialSymbols(depth, spaceCount)}${key}: ${stringify(value, spaceCount, depth + 1)}`,
   );
 
-  return ["{", ...objjj, `${bracketIndentDot(depth, spaceCount)}}`].join("\n");
+  return ["{", ...objEntries, `${bracketIndentDot(depth, spaceCount)}}`].join("\n");
 };
 
 const stylish = (typedKeys, spaceCount = 4, depth = 1) => {
