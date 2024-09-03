@@ -10,7 +10,7 @@
 
 ![eslint](https://github.com/user-attachments/assets/1095fdc9-f5df-4ec8-868a-521db943adca)
 
-[![javascript](assets/images/js.png)](https://www.google.com/imgres?q=javscript&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F99%2FUnofficial_JavaScript_logo_2.svg%2F800px-Unofficial_JavaScript_logo_2.svg.png&imgrefurl=https%3A%2F%2Fru.wikipedia.org%2Fwiki%2FJavaScript&docid=CkXirMXvIZwNmM&tbnid=4tmv5QgEHUtZcM&vet=12ahUKEwjA_oHvgaeIAxXXzQIHHUaLHQ0QM3oECBcQAA..i&w=800&h=800&hcb=2&ved=2ahUKEwjA_oHvgaeIAxXXzQIHHUaLHQ0QM3oECBcQAA)
+![js](https://github.com/user-attachments/assets/d1b337e4-feea-4cad-ae8e-58946ba94aff)
 
 [![jest](assets/images/jest.png)](https://www.google.com/imgres?q=jest&imgurl=https%3A%2F%2Ficon.icepanel.io%2FTechnology%2Fsvg%2FJest.svg&imgrefurl=https%3A%2F%2Ftechicons.dev%2Ficons%2Fjest&docid=p1kXGhncA_irZM&tbnid=Ip0zCdI7qlZo-M&vet=12ahUKEwj3zsKAgqeIAxXd9AIHHevPMuUQM3oECEsQAA..i&w=800&h=800&hcb=2&ved=2ahUKEwj3zsKAgqeIAxXd9AIHHevPMuUQM3oECEsQAA)
 
