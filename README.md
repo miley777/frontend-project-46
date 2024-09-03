@@ -4,15 +4,10 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d7637bca31bb1a0d79ae/test_coverage)](https://codeclimate.com/github/miley777/frontend-project-46/test_coverage)
 
 
-![eslint](https://github.com/user-attachments/assets/1095fdc9-f5df-4ec8-868a-521db943adca)
-![js](https://github.com/user-attachments/assets/d1b337e4-feea-4cad-ae8e-58946ba94aff)
-![jest](https://github.com/user-attachments/assets/24362f9b-bf73-4ac6-bef2-a85657e3c085)
-![nodejs](https://github.com/user-attachments/assets/d61aeca8-d9a3-4ea0-9f64-f8b4d5530eeb)
-
-<img src="https://github.com/user-attachments/assets/1095fdc9-f5df-4ec8-868a-521db943adca" width="100" hight="100">
-<img src="https://github.com/user-attachments/assets/d1b337e4-feea-4cad-ae8e-58946ba94aff" width="100" hight="90">
-<img src="https://github.com/user-attachments/assets/24362f9b-bf73-4ac6-bef2-a85657e3c085" width="100" hight="90">
-<img src="https://github.com/user-attachments/assets/d61aeca8-d9a3-4ea0-9f64-f8b4d5530eeb" width="100" hight="50">
+<img src="https://github.com/user-attachments/assets/1095fdc9-f5df-4ec8-868a-521db943adca" width="100" height="100">
+<img src="https://github.com/user-attachments/assets/d1b337e4-feea-4cad-ae8e-58946ba94aff" width="100" height="90">
+<img src="https://github.com/user-attachments/assets/24362f9b-bf73-4ac6-bef2-a85657e3c085" width="100" height="90">
+<img src="https://github.com/user-attachments/assets/d61aeca8-d9a3-4ea0-9f64-f8b4d5530eeb" width="100" height="50">
 
 ## GenDiff cli-app
 
