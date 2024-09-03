@@ -12,7 +12,7 @@
 
 ![js](https://github.com/user-attachments/assets/d1b337e4-feea-4cad-ae8e-58946ba94aff)
 
-[![jest](assets/images/jest.png)](https://www.google.com/imgres?q=jest&imgurl=https%3A%2F%2Ficon.icepanel.io%2FTechnology%2Fsvg%2FJest.svg&imgrefurl=https%3A%2F%2Ftechicons.dev%2Ficons%2Fjest&docid=p1kXGhncA_irZM&tbnid=Ip0zCdI7qlZo-M&vet=12ahUKEwj3zsKAgqeIAxXd9AIHHevPMuUQM3oECEsQAA..i&w=800&h=800&hcb=2&ved=2ahUKEwj3zsKAgqeIAxXd9AIHHevPMuUQM3oECEsQAA)
+![jest](https://github.com/user-attachments/assets/24362f9b-bf73-4ac6-bef2-a85657e3c085)
 
 ![nodejs](https://github.com/user-attachments/assets/d61aeca8-d9a3-4ea0-9f64-f8b4d5530eeb)
 
