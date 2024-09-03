@@ -2,8 +2,6 @@ import process from 'process';
 import path from 'path';
 import fs from 'fs';
 import getParsed from './parsers.js';
-//import getComparedLines from './stylish.js';
-//import getLines from './plain.js';
 import chooseFormater from './formatters/index.js';
 
 export const buildFilePath = (filepath) => path.resolve(process.cwd(), filepath);
