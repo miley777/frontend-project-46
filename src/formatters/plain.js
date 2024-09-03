@@ -9,7 +9,7 @@ const stringify = (typedKeys) => {
     }
     return `${typedKeys}`;
   } else {
-    return "[comlex value]";
+    return "[complex value]";
   }
 };
 
