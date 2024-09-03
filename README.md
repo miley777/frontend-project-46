@@ -8,7 +8,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/d7637bca31bb1a0d79ae/test_coverage)](https://codeclimate.com/github/miley777/frontend-project-46/test_coverage)
 
 
-[![Eslint](assets/images/eslint.png)](https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FESLint&psig=AOvVaw3QheChnjBLXEgFn7BfUcVB&ust=1725461030800000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOjmtLCBp4gDFQAAAAAdAAAAABAE)
+![Eslint](assets/images/eslint.png)
 
 [![javascript](assets/images/js.png)](https://www.google.com/imgres?q=javscript&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F99%2FUnofficial_JavaScript_logo_2.svg%2F800px-Unofficial_JavaScript_logo_2.svg.png&imgrefurl=https%3A%2F%2Fru.wikipedia.org%2Fwiki%2FJavaScript&docid=CkXirMXvIZwNmM&tbnid=4tmv5QgEHUtZcM&vet=12ahUKEwjA_oHvgaeIAxXXzQIHHUaLHQ0QM3oECBcQAA..i&w=800&h=800&hcb=2&ved=2ahUKEwjA_oHvgaeIAxXXzQIHHUaLHQ0QM3oECBcQAA)
 
