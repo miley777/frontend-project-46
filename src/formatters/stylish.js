@@ -19,7 +19,7 @@ const stringify = (keys, spaceCount = 4, depth = 1) => {
   }
   const objjj = Object.entries(keys).map(
     ([key, value]) =>
-      `${currentIndentWithoutSpasialSymbols(depth, spaceCount)}${key}: ${stringify(value, depth + 1, spaceCount)}`,
+      `${currentIndentWithoutSpasialSymbols(depth, spaceCount)}${key}: ${stringify(value, spaceCount, depth + 1)}`,
   );
 
   return ["{", ...objjj, `${bracketIndentDot(depth, spaceCount)}}`].join("\n");
@@ -27,20 +27,19 @@ const stringify = (keys, spaceCount = 4, depth = 1) => {
 
 const stylish = (typedKeys, spaceCount = 4, depth = 1) => {
   const sortedEntries = typedKeys.map((typedKey) => {
-    if (typedKey.type === "deleted") {
-      return `${currentIndent(depth, spaceCount)}- ${typedKey.key}: ${stringify(typedKey.value, spaceCount, depth + 1)}`;
-    }
-    if (typedKey.type === "added") {
-      return `${currentIndent(depth, spaceCount)}+ ${typedKey.key}: ${stringify(typedKey.value, spaceCount, depth + 1)}`;
-    }
-    if (typedKey.type === "unchanged") {
-      return `${currentIndent(depth, spaceCount)}  ${typedKey.key}: ${typedKey.value}`;
-    }
-    if (typedKey.type === "changed") {
-      return `${currentIndent(depth, spaceCount)}- ${typedKey.key}: ${stringify(typedKey.value1, spaceCount, depth + 1)}\n${currentIndent(depth, spaceCount)}+ ${typedKey.key}: ${stringify(typedKey.value2, spaceCount, depth + 1)}`;
-    }
-    if (typedKey.type === "nested") {
-      return `${currentIndent(depth, spaceCount)}  ${typedKey.key}: ${stylish(typedKey.children, spaceCount, depth + 1)}`;
+    switch (typedKey.type) {
+      case 'deleted':
+        return `${currentIndent(depth, spaceCount)}- ${typedKey.key}: ${stringify(typedKey.value, spaceCount, depth + 1)}`;
+      case 'added':
+        return `${currentIndent(depth, spaceCount)}+ ${typedKey.key}: ${stringify(typedKey.value, spaceCount, depth + 1)}`;
+      case 'unchanged':
+        return `${currentIndent(depth, spaceCount)}  ${typedKey.key}: ${typedKey.value}`;
+      case 'changed':
+        return `${currentIndent(depth, spaceCount)}- ${typedKey.key}: ${stringify(typedKey.value1, spaceCount, depth + 1)}\n${currentIndent(depth, spaceCount)}+ ${typedKey.key}: ${stringify(typedKey.value2, spaceCount, depth + 1)}`;
+      case 'nested':
+        return `${currentIndent(depth, spaceCount)}  ${typedKey.key}: ${stylish(typedKey.children, spaceCount, depth + 1)}`;
+      default:
+        return new Error(`Type: ${typedKey.key} is underfined`);
     }
   });
   return ["{", ...sortedEntries, `${bracketIndent(depth, spaceCount)}}`].join(
