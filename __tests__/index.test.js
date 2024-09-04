@@ -1,11 +1,8 @@
 import { expect, test } from '@jest/globals';
 import fs from 'fs';
-import path from 'path';
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import { buildFilePath } from '../src';
-import { extractFormat } from '../src';
-import genDiff from '../src';
+import path, { dirname } from 'path';
+import genDiff, { extractFormat, buildFilePath } from '../src';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -125,12 +122,29 @@ test.each([{ file1: './__tests__/../__fixtures__/file1.json', file2: './__tests_
   { file1: './__fixtures__/file1.json', file2: './__fixtures__/file2.json' },
   { file1: './bin/../__fixtures__/file1.json', file2: './bin/../__fixtures__/file2.json' },
   { file1: './src/../__fixtures__/file1.json', file2: './src/../__fixtures__/file2.json' },
-])( 'test extractFormat', ({ file1, file2 }) => {
+])( 'test extractFormat for json files', ({ file1, file2 }) => {
   expect(extractFormat(file1)).toEqual('json');
   expect(extractFormat(file2)).toEqual('json');
 });
 
-//test.each(['json', 'yaml', 'yml'])('test format', (format) => {
-//  expect(getFixturePath(`file1.${format}`));
-//  expect(getFixturePath(`file2.${format}`));
-//});
+test.each([{ file1: './__tests__/../__fixtures__/file1.yaml', file2: './__tests__/../__fixtures__/file2.yaml' },
+  { file1: './__fixtures__/file1.yaml', file2: './__fixtures__/file2.yaml' },
+  { file1: './bin/../__fixtures__/file1.yaml', file2: './bin/../__fixtures__/file2.yaml' },
+  { file1: './src/../__fixtures__/file1.yaml', file2: './src/../__fixtures__/file2.yaml' },
+])( 'test extractFormat for yaml files', ({ file1, file2 }) => {
+  expect(extractFormat(file1)).toEqual('yaml');
+  expect(extractFormat(file2)).toEqual('yaml');
+});
+
+test.each([{ file1: './__tests__/../__fixtures__/file1.yml', file2: './__tests__/../__fixtures__/file2.yml' },
+  { file1: './__fixtures__/file1.yml', file2: './__fixtures__/file2.yml' },
+  { file1: './bin/../__fixtures__/file1.yml', file2: './bin/../__fixtures__/file2.yml' },
+  { file1: './src/../__fixtures__/file1.yml', file2: './src/../__fixtures__/file2.yml' },
+])( 'test extractFormat for yml files', ({ file1, file2 }) => {
+  expect(extractFormat(file1)).toEqual('yml');
+  expect(extractFormat(file2)).toEqual('yml');
+});
+// test.each(['json', 'yaml', 'yml'])('test format', (format) => {
+//   expect(getFixturePath(`file1.${format}`));
+//   expect(getFixturePath(`file2.${format}`));
+// });

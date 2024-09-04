@@ -7,9 +7,8 @@ const stringify = (typedKeys) => {
       return `'${typedKeys}'`;
     }
     return `${typedKeys}`;
-  } else {
-    return "[complex value]";
   }
+  return '[complex value]';
 };
 
 const plain = (typedKeys, arr = []) => {

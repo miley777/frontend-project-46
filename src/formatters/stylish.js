@@ -13,8 +13,7 @@ const stringify = (keys, spaceCount = 4, depth = 1) => {
     return `${keys}`;
   }
   const objEntries = Object.entries(keys).map(
-    ([key, value]) =>
-      `${currentIndentWithoutSpasialSymbols(depth, spaceCount)}${key}: ${stringify(value, spaceCount, depth + 1)}`,
+    ([key, value]) => `${currentIndentWithoutSpasialSymbols(depth, spaceCount)}${key}: ${stringify(value, spaceCount, depth + 1)}`,
   );
   return ['{', ...objEntries, `${bracketIndentDot(depth, spaceCount)}}`].join('\n');
 };
