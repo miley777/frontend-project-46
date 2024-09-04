@@ -6,7 +6,7 @@ const stringify = (typedKeys) => {
     if (_.isString(typedKeys)) {
       return `'${typedKeys}'`;
     }
-    // return `${typedKeys}`;
+    return `${typedKeys}`;
   } else {
     return "[complex value]";
   }
