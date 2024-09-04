@@ -11,6 +11,8 @@ const chooseFormater = (formatName, parsing1, parsing2) => {
       return getLines(parsing1, parsing2);
     case 'json':
       return JSON.stringify(data);
+    default:
+      return new Error(`Format: ${formatName} is underfined`);
   }
 };
 

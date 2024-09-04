@@ -8,7 +8,7 @@ export const getType = (filepath1, filepath2) => {
   const typedKeys = sortedKeys.map((key) => {
     if (!Object.hasOwn(filepath1, key)) {
       return { type: 'added', key: key, value: filepath2[key] };
-    } 
+    }
     if (!Object.hasOwn(filepath2, key)) {
       return { type: 'deleted', key: key, value: filepath1[key] };
     }

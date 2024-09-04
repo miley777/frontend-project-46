@@ -3,14 +3,10 @@ import { getType } from '../typedKeys.js';
 
 const indentSize = (depth, spaceCount) => depth * spaceCount;
 const shiftToTheLeft = (spaceCount) => spaceCount - 2;
-const currentIndentWithoutSpasialSymbols = (depth, spaceCount) =>
-  ' '.repeat(indentSize(depth, spaceCount));
-const currentIndent = (depth, spaceCount) =>
-  ' '.repeat(indentSize(depth, spaceCount) - shiftToTheLeft(spaceCount));
-const bracketIndent = (depth, spaceCount) =>
-  ' '.repeat(indentSize(depth, spaceCount) - spaceCount);
-const bracketIndentDot = (depth, spaceCount) =>
-  ' '.repeat(indentSize(depth, spaceCount) - spaceCount);
+const currentIndentWithoutSpasialSymbols = (depth, spaceCount) => ' '.repeat(indentSize(depth, spaceCount));
+const currentIndent = (depth, spaceCount) => ' '.repeat(indentSize(depth, spaceCount) - shiftToTheLeft(spaceCount));
+const bracketIndent = (depth, spaceCount) => ' '.repeat(indentSize(depth, spaceCount) - spaceCount);
+const bracketIndentDot = (depth, spaceCount) => ' '.repeat(indentSize(depth, spaceCount) - spaceCount);
 
 const stringify = (keys, spaceCount = 4, depth = 1) => {
   if (!_.isObject(keys)) {
@@ -20,7 +16,6 @@ const stringify = (keys, spaceCount = 4, depth = 1) => {
     ([key, value]) =>
       `${currentIndentWithoutSpasialSymbols(depth, spaceCount)}${key}: ${stringify(value, spaceCount, depth + 1)}`,
   );
-
   return ['{', ...objEntries, `${bracketIndentDot(depth, spaceCount)}}`].join('\n');
 };
 
