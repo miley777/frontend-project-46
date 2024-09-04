@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { getType } from '../typedKeys.js';
+import getType from '../typedKeys.js';
 
 const stringify = (typedKeys) => {
   if (!_.isObject(typedKeys)) {

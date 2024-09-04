@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { getType } from '../typedKeys.js';
+import getType from '../typedKeys.js';
 
 const indentSize = (depth, spaceCount) => depth * spaceCount;
 const shiftToTheLeft = (spaceCount) => spaceCount - 2;

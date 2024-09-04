@@ -1,6 +1,6 @@
 import getComparedLines from './stylish.js';
 import getLines from './plain.js';
-import { getType } from '../typedKeys.js';
+import getType from '../typedKeys.js';
 
 const chooseFormater = (formatName, parsing1, parsing2) => {
   const data = getType(parsing1, parsing2);

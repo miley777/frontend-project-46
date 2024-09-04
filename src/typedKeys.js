@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-export const getType = (filepath1, filepath2) => {
+const getType = (filepath1, filepath2) => {
   const keys1 = _.keys(filepath1);
   const keys2 = _.keys(filepath2);
   const uniqKeys = _.uniq([...keys1, ...keys2]);
@@ -24,3 +24,5 @@ export const getType = (filepath1, filepath2) => {
   });
   return typedKeys;
 };
+
+export default getType;
