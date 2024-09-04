@@ -20,4 +20,4 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   return chooseFormater(formatName, parsing1, parsing2);
 };
 
-export default genDiff; 
+export default genDiff;

@@ -1,13 +1,12 @@
+import _ from 'lodash';
 import { getType } from '../typedKeys.js';
-import _ from "lodash";
-
 
 const stringify = (typedKeys) => {
   if (!_.isObject(typedKeys)) {
     if (_.isString(typedKeys)) {
       return `'${typedKeys}'`;
     }
-    return `${typedKeys}`;
+    // return `${typedKeys}`;
   } else {
     return "[complex value]";
   }
@@ -29,11 +28,10 @@ const plain = (typedKeys, arr = []) => {
         return plain(typedKey.children, copyArr);
       default:
         return new Error(`Type: ${typedKey.key} is underfined`);
-    } 
-  }); 
-  return [...sortedEntries].join("\n");
+    }
+  });
+  return [...sortedEntries].join('\n');
 };
-
 
 const getLines = (filepath1, filepath2) => {
   const typedKeys = getType(filepath1, filepath2);
