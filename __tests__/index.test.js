@@ -6,8 +6,8 @@ import genDiff from '../src';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 const inputFormat = ['json', 'yaml', 'yml'];
@@ -36,4 +36,3 @@ test.each([{ file1: null, file2: null },
     genDiff(file1, file2);
   }).toThrow();
 });
-
