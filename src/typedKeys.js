@@ -19,7 +19,7 @@ const getType = (filepath1, filepath2) => {
     }
     if ((filepath1[key] !== filepath2[key])) {
       return {
-        type: 'changed', key, value1: val1, value2: val2
+        type: 'changed', key, value1: val1, value2: val2,
       };
     }
     return { type: 'unchanged', key, value: val2 };
