@@ -9,7 +9,7 @@ const getType = (filepath1, filepath2) => {
     const val1 = filepath1[key];
     const val2 = filepath2[key];
     if (!Object.hasOwn(filepath1, key)) {
-      return { type: 'added', key: key, value: val2 };
+      return { type: 'added', key, value: val2 };
     }
     if (!Object.hasOwn(filepath2, key)) {
       return { type: 'deleted', key, value: val1 };
@@ -18,7 +18,9 @@ const getType = (filepath1, filepath2) => {
       return { type: 'nested', key, children: getType(val1, val2) };
     }
     if ((filepath1[key] !== filepath2[key])) {
-      return { type: 'changed', key, value1: val1, value2: val2 };
+      return {
+        type: 'changed', key, value1: val1, value2: val2
+      };
     }
     return { type: 'unchanged', key, value: val2 };
   });
