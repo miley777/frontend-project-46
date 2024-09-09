@@ -18,7 +18,7 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const format2 = extractFormat(filepath2);
   const parsing1 = getParsed(data1, format1);
   const parsing2 = getParsed(data2, format2);
-  const data = getDataType(parsing1, parsing2)
+  const data = getDataType(parsing1, parsing2);
   return chooseFormater(formatName, data);
 };
 

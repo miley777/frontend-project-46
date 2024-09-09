@@ -20,4 +20,3 @@ test.each(inputFormat)('testing gendif', (format) => {
   expect(genDiff(file1, file2, 'plain')).toEqual(readFile('confirmingFilePlain.txt'));
   expect(genDiff(file1, file2, 'json')).toEqual(readFile('confirmingFileJSON.txt'));
 });
-

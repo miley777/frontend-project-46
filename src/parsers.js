@@ -1,7 +1,7 @@
 import yaml from 'yaml-js';
 
 const getParsed = (data, format) => {
-  switch (format){
+  switch (format) {
     case 'yaml':
     case 'yml':
       return yaml.load(data);
