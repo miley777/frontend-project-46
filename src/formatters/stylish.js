@@ -3,7 +3,7 @@ import _ from 'lodash';
 // const shiftToTheLeft = (spaceCount) => spaceCount - 2;
 const currentIndent = (depth, spaceCount, type = '') => {
   const indent = type ? ' '.repeat(depth * spaceCount - 2) : ' '.repeat(depth * spaceCount);
-  return indent; 
+  return indent;
 };
 
 const bracketIndent = (depth, spaceCount) => ' '.repeat(depth * spaceCount - spaceCount);
