@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 // const shiftToTheLeft = (spaceCount) => spaceCount - 2;
-const currentIndent = (depth, spaceCount, type = '') => type ? ' '.repeat(depth * spaceCount - 2) : ' '.repeat(depth * spaceCount);
+const currentIndent = (depth, spaceCount, type = '') => { return type ? ' '.repeat(depth * spaceCount - 2) : ' '.repeat(depth * spaceCount) };
 const bracketIndent = (depth, spaceCount) => ' '.repeat(depth * spaceCount - spaceCount);
 
 const stringify = (keys, spaceCount = 4, depth = 1) => {
