@@ -3,6 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import getParsed from './parsers.js';
 import chooseFormater from './formatters/index.js';
+import getDataType from './typedKeys.js';
 
 export const buildFilePath = (filepath) => path.resolve(process.cwd(), filepath);
 
@@ -17,7 +18,8 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const format2 = extractFormat(filepath2);
   const parsing1 = getParsed(data1, format1);
   const parsing2 = getParsed(data2, format2);
-  return chooseFormater(formatName, parsing1, parsing2);
+  const data = getDataType(parsing1, parsing2)
+  return chooseFormater(formatName, data);
 };
 
 export default genDiff;

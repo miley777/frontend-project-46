@@ -1,14 +1,12 @@
-import getComparedLines from './stylish.js';
-import getLines from './plain.js';
-import getType from '../typedKeys.js';
+import getStylish from './stylish.js';
+import getPlain from './plain.js';
 
-const chooseFormater = (formatName, parsing1, parsing2) => {
-  const data = getType(parsing1, parsing2);
+const chooseFormater = (formatName, data) => {
   switch (formatName) {
     case 'stylish':
-      return getComparedLines(parsing1, parsing2);
+      return getStylish(data);
     case 'plain':
-      return getLines(parsing1, parsing2);
+      return getPlain(data);
     case 'json':
       return JSON.stringify(data);
     default:

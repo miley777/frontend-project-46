@@ -1,30 +1,25 @@
 import _ from 'lodash';
 
-const getType = (filepath1, filepath2) => {
-  // const keys1 = _.keys();
-  // const keys2 = _.keys();
-  // const uniqKeys = _.uniq([...keys1, ...keys2]);
-  const sortedKeys = _.sortBy(Object.keys({ ...filepath1, ...filepath2 }));
+const getDataType = (data1, data2) => {
+  const sortedKeys = _.sortBy(Object.keys({ ...data1, ...data2 }));
   const typedKeys = sortedKeys.map((key) => {
-    const val1 = filepath1[key];
-    const val2 = filepath2[key];
-    if (!Object.hasOwn(filepath1, key)) {
-      return { type: 'added', key, value: val2 };
+    if (!Object.hasOwn(data1, key)) {
+      return { type: 'added', key, value: data2[key] };
     }
-    if (!Object.hasOwn(filepath2, key)) {
-      return { type: 'deleted', key, value: val1 };
+    if (!Object.hasOwn(data2, key)) {
+      return { type: 'deleted', key, value: data1[key] };
     }
-    if (_.isObject(filepath1[key]) && _.isObject(filepath2[key])) {
-      return { type: 'nested', key, children: getType(val1, val2) };
+    if (_.isObject(data1[key]) && _.isObject(data2[key])) {
+      return { type: 'nested', key, children: getDataType(data1[key], data2[key]) };
     }
-    if ((filepath1[key] !== filepath2[key])) {
+    if ((data1[key] !== data2[key])) {
       return {
-        type: 'changed', key, value1: val1, value2: val2,
+        type: 'changed', key, value1: data1[key], value2: data2[key],
       };
     }
-    return { type: 'unchanged', key, value: val2 };
+    return { type: 'unchanged', key, value: data2[key] };
   });
   return typedKeys;
 };
 
-export default getType;
+export default getDataType;

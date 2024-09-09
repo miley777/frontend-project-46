@@ -1,10 +1,15 @@
 import yaml from 'yaml-js';
 
 const getParsed = (data, format) => {
-  if ((format === 'yaml') || (format === 'yml')) {
-    return yaml.load(data);
+  switch (format){
+    case 'yaml':
+    case 'yml':
+      return yaml.load(data);
+    case 'json':
+      return JSON.parse(data);
+    default:
+      return new Error(`Format: ${format} is underfined`);
   }
-  return JSON.parse(data);
 };
 
 export default getParsed;

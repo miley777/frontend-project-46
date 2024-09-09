@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import getType from '../typedKeys.js';
 
 const stringify = (typedKeys) => {
   if (!_.isObject(typedKeys)) {
@@ -32,10 +31,8 @@ const plain = (typedKeys, arr = []) => {
   return [...sortedEntries].join('\n');
 };
 
-const getLines = (filepath1, filepath2) => {
-  const typedKeys = getType(filepath1, filepath2);
-  const iterdiff = plain(typedKeys);
-  return iterdiff;
+const getPlain = (typedKeys) => {
+  return plain(typedKeys);
 };
 
-export default getLines;
+export default getPlain;
