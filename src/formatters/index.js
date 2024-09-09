@@ -1,12 +1,12 @@
-import getStylish from './stylish.js';
-import getPlain from './plain.js';
+import stylish from './stylish.js';
+import plain from './plain.js';
 
 const chooseFormater = (formatName, data) => {
   switch (formatName) {
     case 'stylish':
-      return getStylish(data);
+      return stylish(data);
     case 'plain':
-      return getPlain(data);
+      return plain(data);
     case 'json':
       return JSON.stringify(data);
     default:
