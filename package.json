@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "GenDiff is a cli-app determines the difference between two data structures. [![Actions Status](https://github.com/miley777/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/miley777/frontend-project-46/actions)",
+  "description": "GenDiff is a cli-app determines the difference between two data structures.",
   "main": "src/index.js",
   "type": "module",
   "scripts": {
