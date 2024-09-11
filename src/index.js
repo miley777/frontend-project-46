@@ -3,7 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import getParsed from './parsers.js';
 import chooseFormater from './formatters/index.js';
-import getDataType from './typedKeys.js';
+import getDataType from './getDataType.js';
 
 export const buildFilePath = (filepath) => path.resolve(process.cwd(), filepath);
 

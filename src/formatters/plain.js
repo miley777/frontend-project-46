@@ -20,10 +20,10 @@ const plain = (typedKeys, arr = []) => {
         return `Property '${makeALine}' was added with value: ${stringify(typedKey.value)}`;
       case 'changed':
         return `Property '${makeALine}' was updated. From ${stringify(typedKey.value1)} to ${stringify(typedKey.value2)}`;
-      case 'nested':
-        // eslint-disable-next-line no-case-declarations
-        const copyArr = [...arr, typedKey.key];
-        return plain(typedKey.children, copyArr);
+      case 'nested': {
+        const copyArr = [ ...arr, typedKey.key ];
+        return plain(typedKey.children, copyArr); 
+      }
       default:
         return new Error(`Type: ${typedKey.key} is underfined`);
     }
