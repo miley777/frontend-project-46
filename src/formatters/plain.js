@@ -21,8 +21,8 @@ const plain = (typedKeys, arr = []) => {
       case 'changed':
         return `Property '${makeALine}' was updated. From ${stringify(typedKey.value1)} to ${stringify(typedKey.value2)}`;
       case 'nested': {
-        const copyArr = [ ...arr, typedKey.key ];
-        return plain(typedKey.children, copyArr); 
+        const copyArr = [...arr, typedKey.key];
+        return plain(typedKey.children, copyArr);
       }
       default:
         return new Error(`Type: ${typedKey.key} is underfined`);
