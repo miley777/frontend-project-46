@@ -36,7 +36,7 @@ const stylish = (tree) => {
 
     return sortedEntries;
   };
-  return [`{`, ...iter(tree, 0), `}`].join('\n');
+  return ['{', ...iter(tree, 0), '}'].join('\n');
 };
 
 export default stylish;
